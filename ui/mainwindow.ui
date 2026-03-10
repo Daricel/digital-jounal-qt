@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>900</width>
+                <height>700</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Journal Application</string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                    <widget class="QSplitter" name="mainSplitter">
+                        <property name="orientation">
+                            <enum>Qt::Horizontal</enum>
+                        </property>
+                        <widget class="QTreeWidget" name="entriesTreeWidget">
+                            <property name="alternatingRowColors">
+                                <bool>true</bool>
+                            </property>
+                            <property name="expandsOnDoubleClick">
+                                <bool>false</bool>
+                            </property>
+                            <column>
+                                <property name="text">
+                                    <string>Date</string>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Title</string>
+                                </property>
+                            </column>
+                        </widget>
+                        <widget class="QGroupBox" name="buttonsGroupBox">
+                            <property name="maximumSize">
+                                <size>
+                                    <width>200</width>
+                                    <height>16777215</height>
+                                </size>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>180</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="title">
+                                <string>Actions</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="buttonsLayout">
+                                <item>
+                                    <widget class="QPushButton" name="addButton">
+                                        <property name="text">
+                                            <string>Add Entry</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="removeButton">
+                                        <property name="text">
+                                            <string>Remove Entry</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="updateButton">
+                                        <property name="text">
+                                            <string>Update Entry</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="spacerLabel1">
+                                        <property name="text">
+                                            <string/>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="undoButton">
+                                        <property name="text">
+                                            <string>Undo</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="redoButton">
+                                        <property name="text">
+                                            <string>Redo</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="spacerLabel2">
+                                        <property name="text">
+                                            <string/>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="filterButton">
+                                        <property name="text">
+                                            <string>Filter Entries</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="clearFilterButton">
+                                        <property name="text">
+                                            <string>Clear Filter</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="clearRepoButton">
+                                        <property name="text">
+                                            <string>Clear Repository</string>
+                                        </property>
+                                        <property name="styleSheet">
+                                            <string notr="true">QPushButton {
+                                                background-color: #ff4444;
+                                                color: white;
+                                                border-radius: 5px;
+                                                padding: 5px;
+                                                }
+                                                QPushButton:hover {
+                                                background-color: #cc0000;
+                                                }</string>
+                                        </property>
+                                        <property name="toolTip">
+                                            <string>Permanently delete all entries</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <spacer name="verticalSpacer">
+                                        <property name="orientation">
+                                            <enum>Qt::Vertical</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                            <size>
+                                                <width>20</width>
+                                                <height>40</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                </item>
+                            </layout>
+                        </widget>
+                    </widget>
+                </item>
+            </layout>
+        </widget>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>900</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <widget class="QMenu" name="menuFile">
+                <property name="title">
+                    <string>&amp;File</string>
+                </property>
+                <addaction name="actionExit"/>
+            </widget>
+            <widget class="QMenu" name="menuEdit">
+                <property name="title">
+                    <string>&amp;Edit</string>
+                </property>
+                <addaction name="actionAdd_Entry"/>
+                <addaction name="actionUndo"/>
+                <addaction name="actionRedo"/>
+            </widget>
+            <addaction name="menuFile"/>
+            <addaction name="menuEdit"/>
+        </widget>
+        <widget class="QStatusBar" name="statusbar"/>
+        <action name="actionExit">
+            <property name="text">
+                <string>E&amp;xit</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Q</string>
+            </property>
+        </action>
+        <action name="actionAdd_Entry">
+            <property name="text">
+                <string>&amp;Add Entry</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+N</string>
+            </property>
+        </action>
+        <action name="actionUndo">
+            <property name="text">
+                <string>&amp;Undo</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Z</string>
+            </property>
+        </action>
+        <action name="actionRedo">
+            <property name="text">
+                <string>&amp;Redo</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Y</string>
+            </property>
+        </action>
+    </widget>
+    <resources/>
+    <connections/>
+</ui>
