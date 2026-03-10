@@ -104,5 +104,5 @@ Click the Run button
 
 - This project is intended for educational purposes and can be used as a reference for learning three‑layer architecture and design patterns in C++/Qt.
 ---
-Made with ❤️ for the OOP lab
+
 - Babeș-Bolyai University, Faculty of Mathematics and Computer Science
