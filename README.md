@@ -1,0 +1,1 @@
+# digital-jounal-qt
